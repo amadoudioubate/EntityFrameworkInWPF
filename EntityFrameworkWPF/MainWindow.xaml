@@ -1,0 +1,36 @@
+﻿<Window x:Class="EntityFrameworkWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EntityFrameworkWPF"
+        mc:Ignorable="d"
+        Title="Gestion MyEvent" Height="600" Width="1000" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="480"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" Grid.ColumnSpan="3" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="dataGridMyEvents" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Titre" Binding="{Binding Title}" MinWidth="220"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" MinWidth="380"/>
+                <DataGridTextColumn Header="Date début" Binding="{Binding DateStart}" MinWidth="200"/>
+                <DataGridTextColumn Header="Date fin" Binding="{Binding DateEnd}" MinWidth="200"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        
+        <Button Grid.Row="2" Content="Créer" Height="30" Width="100" FontWeight="Bold" FontSize="16"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="Rechercher" Height="30" Width="100" FontWeight="Bold" FontSize="16"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="Supprimer" Height="30" Width="100" FontWeight="Bold" FontSize="16"/>
+    </Grid>
+</Window>
